@@ -24,23 +24,35 @@ def contact():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html', projects=[
+    return render_template('projects.html', projects = [
         {
             "name": "Portfolio Website",
-            "description": "this is a basic portfolio website",
-            "tech_stack": ["HTML", "TailwindCSS", "JavaScript", "Flask", "Python"],
-            "logo": "images/projects/portfolio_favicon.png",
+            "description": "A personal portfolio website built using Flask to showcase projects and skills.",
+            "ss": "images/projects/portfolio-ss.png",
             "github": "https://github.com/srikarthikB/portfolio-flask.git",
-            "live": "https://portfolio-flask-five.vercel.app/"
+            "live": "https://portfolio-flask-production-0058.up.railway.app/",
+            "highlights": [
+                "Dynamic routing using Flask",
+                "Template rendering with Jinja2",
+                "Structured multi-page architecture",
+                "Static asset management",
+                "Deployed using Vercel"
+            ]
         },
         {
-            "name": "Interactive digital library",
-            "description": "this is a digital library website",
-            "tech_stack": ["Python", "Flask", "JavaScript", "TailwindCSS"],
-            "logo": "images/projects/idl_favicon.png",
-            "github": "https://github.com/sri16/interactive-digital-library",
-            "live": "https://interactive-digital-library.onrender.com/"
-        },
+            "name": "Interactive Digital Library",
+            "description": "A web-based digital library allowing users to browse and explore books interactively.",
+            "ss": "images/projects/digilib-ss.png",
+            "github": "https://github.com/srikarthikB/interactive-digital-library",
+            "live": "https://interactive-digital-library.onrender.com/",
+            "highlights": [
+                "Backend logic implemented using Flask",
+                "Dynamic content rendering with Jinja2",
+                "Modular project structure",
+                "Local data handling",
+                "Deployed using Render"
+            ]
+        }
     ])
 
 if __name__ == "__main__":
