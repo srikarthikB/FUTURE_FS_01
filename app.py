@@ -30,6 +30,8 @@ def contact():
             email = request.form['email']
             message = request.form['message']
 
+            print("API KEY:", os.environ.get("SENDGRID_API_KEY"))
+
             sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
 
             email_message = Mail(
