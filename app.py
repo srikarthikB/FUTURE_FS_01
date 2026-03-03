@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, request, flash
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
-import os
+import os, traceback
 
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
@@ -30,12 +30,10 @@ def contact():
             email = request.form['email']
             message = request.form['message']
 
-            print("API KEY:", os.environ.get("SENDGRID_API_KEY"))
-
             sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
 
             email_message = Mail(
-                from_email='sri2006karthik@gmail.com',  # verified sender
+                from_email='sri2006karthik@gmail.com',
                 to_emails='sri2006karthik@gmail.com',
                 subject=f'Portfolio Contact from {name}',
                 plain_text_content=f"""
@@ -47,13 +45,17 @@ Message:
 """
             )
 
-            sg.send(email_message)
+            response = sg.send(email_message)
+            print("SENDGRID STATUS:", response.status_code)
+            print("SENDGRID BODY:", response.body)
+            print("SENDGRID HEADERS:", response.headers)
 
             flash("Message sent successfully!")
             return redirect('/contact')
 
         except Exception as e:
-            print(e)
+            print("SENDGRID ERROR:")
+            traceback.print_exc()
             return "Email failed. Check logs."
 
     return render_template('contact.html')
