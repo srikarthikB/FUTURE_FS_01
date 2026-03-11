@@ -68,13 +68,13 @@ def contact():
                 to_emails='sri2006karthik@gmail.com',
                 subject=f'Portfolio Contact from {name}',
                 plain_text_content=f"""
-Name: {name}
-Email: {email}
+                                    Name: {name}
+                                    Email: {email}
 
-Message:
-{message}
-"""
-            )
+                                    Message:
+                                    {message}
+                                    """
+                                                )
 
             response = sg.send(email_message)
             print("SENDGRID STATUS:", response.status_code)
@@ -93,4 +93,5 @@ Message:
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
