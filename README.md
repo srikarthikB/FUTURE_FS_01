@@ -8,14 +8,15 @@ This repository contains my personal portfolio website created for the **Future 
 - Contact form
 - Responsive design
 
-## Technologies Used
+## Tech Stack
 - HTML
-- CSS / Tailwind CSS
+- Tailwind CSS
 - JavaScript
 - Python (Flask)
+- SendGrid (email integration)
 
 ## Live Website
-(Add your deployed link here)
+https://karthik-portfolio-nksa.onrender.com/
 
 ## Author
 Sri Karthik
