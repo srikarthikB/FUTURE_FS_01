@@ -21,20 +21,6 @@ def about():
 def projects():
     projects_data = [
         {
-            "name": "Portfolio Website",
-            "description": "A personal portfolio website built using Flask to showcase projects and skills.",
-            "ss": "images/projects/portfolio-ss.png",
-            "github": "https://github.com/srikarthikB/portfolio-flask.git",
-            "live": "https://portfolio-flask-production-0058.up.railway.app/",
-            "highlights": [
-                "Dynamic routing using Flask",
-                "Template rendering with Jinja2",
-                "Structured multi-page architecture",
-                "Static asset management",
-                "Deployed using Railway"
-            ]
-        },
-        {
             "name": "Interactive Digital Library",
             "description": "A web-based digital library allowing users to browse and explore books interactively.",
             "ss": "images/projects/digilib-ss.png",
@@ -46,6 +32,20 @@ def projects():
                 "Modular project structure",
                 "Local data handling",
                 "Deployed using Render"
+            ]
+        },
+        {
+            "name": "Portfolio Website",
+            "description": "A personal portfolio website built using Flask to showcase projects and skills.",
+            "ss": "images/projects/portfolio-ss.png",
+            "github": "https://github.com/srikarthikB/portfolio-flask.git",
+            "live": "https://portfolio-flask-production-0058.up.railway.app/",
+            "highlights": [
+                "Dynamic routing using Flask",
+                "Template rendering with Jinja2",
+                "Structured multi-page architecture",
+                "Static asset management",
+                "Deployed using Railway"
             ]
         }
     ]
